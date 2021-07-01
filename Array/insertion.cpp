@@ -29,10 +29,10 @@ int main(){
 	read(arr , n);
 	cout << "Enter key : ";
 	cin >>key;
-    cout << "Enter location : ";
-    cin >> loc;
+        cout << "Enter location : ";
+        cin >> loc;
 	insertEle(arr, n, key, loc);
-    cout << "Updated array : ";
-    print(arr, n+1);
+        cout << "Updated array : ";
+        print(arr, n+1);
 	return 0;
 }
