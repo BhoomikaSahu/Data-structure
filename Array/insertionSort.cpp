@@ -1,3 +1,7 @@
+/*Time Complexity: O(n^2) 
+  Auxiliary Space: O(1)
+  Boundary Cases: Insertion sort takes maximum time to sort if elements are sorted in reverse order. And it takes minimum time (Order of n) when elements are already sorted.*/
+
 #include<iostream>
 #include<climits>
 using namespace std;
@@ -18,6 +22,9 @@ void insertionSort( int arr[], int n ){
     {
         int current = arr[i];
         int j = i-1;
+        /* Move elements of arr[0..i-1], that are 
+        greater than key, to one position ahead 
+        of their current position */
         while(j>=0 && current<arr[j])
         {
             arr[j+1] = arr[j];

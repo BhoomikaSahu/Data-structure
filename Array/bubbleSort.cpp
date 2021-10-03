@@ -16,7 +16,7 @@ void print (int arr[], int n){
 void bubbleSort( int A[], int n ){
 	int i, j, temp;
 	for(i = 0; i < n-1; i++)
-	    for(j = 0; j < n -1- i; j++)
+	    for(j = 0; j < n-1-i; j++)
 	    	if(A[j+1] < A[j]){
 	    		temp = A[j];
                 A[j] = A[j+1];
@@ -29,7 +29,7 @@ void optBubbleSort( int A[], int n ){
 	for(i = 0; i < n-1; i++)
 	{
 		swapped = true;
-		 for(j = 0; j < n -1- i; j++)
+		 for(j = 0; j < n-1-i; j++)
 	    	if(A[j+1] < A[j]){
 	    		temp = A[j];
                 A[j] = A[j+1];
@@ -44,8 +44,8 @@ void optBubbleSort( int A[], int n ){
 int main()
 {
     #ifndef ONLINE_JUDGE
-		freopen("input.txt","r",stdin);
-		freopen("output.txt","w",stdout);
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
     #endif
 
 	int n;	
