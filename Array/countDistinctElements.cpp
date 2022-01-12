@@ -15,11 +15,11 @@ void print(int arr[], int n){
     cout << endl;
 }
 int countDistinctEle(int arr[], int n){
-    int count = 0;
+    int count = 1;
     for(int i=1; i<n; i++){
         bool flag = true;
         for(int j=i-1; j>=0; j--)
-            if(arr[i] == arr[j])
+            if(arr[j] == arr[i])
             {
                 flag = false;
                 break;
@@ -27,7 +27,7 @@ int countDistinctEle(int arr[], int n){
     if(flag == true)
         count++;
     }
-    return count+1;
+    return count;
 }
 
 int main()
