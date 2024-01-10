@@ -13,27 +13,27 @@ void print (int arr[], int n){
     cout << arr[i]<<" ";
     }
 }
-void bubbleSort( int A[], int n ){
+void bubbleSort( int arr[], int n ){
 	int i, j, temp;
 	for(i = 0; i < n-1; i++)
 	    for(j = 0; j < n-1-i; j++)
-	    	if(A[j+1] < A[j]){
-	    		temp = A[j];
-                A[j] = A[j+1];
-                A[j+1] = temp;
+	    	if(arr[j+1] < arr[j]){
+	    		temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
 			}
 }
-void optBubbleSort( int A[], int n ){
+void optBubbleSort( int arr[], int n ){
 	int i, j, temp;
 	bool  swapped;
 	for(i = 0; i < n-1; i++)
 	{
 		swapped = true;
 		 for(j = 0; j < n-1-i; j++)
-	    	if(A[j+1] < A[j]){
-	    		temp = A[j];
-                A[j] = A[j+1];
-                A[j+1] = temp;
+	    	if(arr[j+1] < arr[j]){
+	    		temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
 				swapped = false;
 			}
 		if(swapped == true)
@@ -51,10 +51,10 @@ int main()
 	int n;	
 	cout<<"Enter number of elements : ";
 	cin>>n;
-    int A[n];
-	read (A, n);
+    int arr[n];
+	read (arr, n);
 	cout << "\nRunning Bubble Sort.........\n";
-    bubbleSort (A, n);
-	print (A, n);
+    bubbleSort (arr, n);
+	print (arr, n);
     return 0;
 }
