@@ -10,26 +10,30 @@ void swap(vector<int> &a, int first, int last){
 }
 
 int partition(vector<int> &a, int low, int high){
-    int pivot = a[high];
-    
-    int i = low - 1;
-
-    for(int j=low; i<high; i++){
-        if(a[j] < pivot){
+    int pivot = a[low];
+    int i=low, j=high;
+    while (i<j){
+        while (a[i]<=pivot && i<high){
             i++;
-            swap(a,i,j);
         }
-    }
-    swap(a,i+1,high);
-    return i+1;
+        while (a[j]>pivot && j>low) {
+            j--;
+        }
+        if(i<j) {
+            swap(a, i, j);
+         }
+    }    
+    swap(a, low, j);
+    return j;
 }
 
 void quicksort(vector<int> &a, int low, int high){
-    if(low<high){
-        int pi = partition(a,low,high);
-        quicksort(a,low,pi-1);
-        quicksort(a,pi+1,high);
+    if(low>high){
+        return;
     }
+    int pi = partition(a,low,high);
+    quicksort(a,low,pi-1);
+    quicksort(a,pi+1,high);
 }
 
 int main(){
@@ -43,7 +47,6 @@ int main(){
         v.push_back(x);
     }
     quicksort(v,0,n-1);
-cout << 1;
 
     for(auto i:v){
         cout<<i<<" ";
