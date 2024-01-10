@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 int main(){
+    pair<int, int> pr;
+    pr = {1, 100};
+    cout << pr.first << endl << pr.second;
+
     pair<int, string> p;
     p = {1, "Apple"};
     cin >> p.first >> p.second;
