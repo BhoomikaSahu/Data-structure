@@ -9,18 +9,25 @@ Sample Output 2 : 1 2 3 4
 #include<iostream>
 using namespace std;
 
-void print(int n){
+void print1(int n){
     if(n == 1){
         cout << n << " ";
     }
     else{
-        print(n - 1);
+        print1(n - 1);
         cout << n << " ";
     }
+}
+void print2(int n) {
+    if(n<1) return;
+
+    cout << n << " ";
+    print2(n-1);
+
 }
 
 int main(){
     int n;
     cin >> n;  
-    print(n);
+    print2(n);
 }
