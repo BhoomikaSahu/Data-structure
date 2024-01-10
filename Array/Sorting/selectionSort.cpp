@@ -14,31 +14,31 @@ void print (int arr[], int n){
     cout << arr[i]<<" ";
     }
 }
-void selectionSort( int A[], int n ){
-	int i, j, temp, indexOfMin;
-	for(i = 0; i < n - 1; i++){
-		indexOfMin = i;
-	    for(j = i + 1; j < n; j++){
-	    	if(A[indexOfMin] > A[j]){
-	    		indexOfMin = j;
+
+void selectionSort(int arr[], int n) {
+	for(int i=0; i<n-1; i++) {
+		int mini = i;
+		for(int j=i+1; j<n; j++) {
+			if(arr[mini] > arr[j]) {
+				mini = j;
 			}
-	    }
-	    temp = A[i];
-	    A[i] = A[indexOfMin];
-	    A[indexOfMin] = temp;
+		}
+		int temp = arr[mini];
+		arr[mini] = arr[i];
+		arr[i] = temp;
 	}
 }
 
 int main()
 {
 	int n; int i,min,j,temp;
-	int A[size];
+	int arr[size];
 	cout<<"Enter number of elements : ";
 	cin>>n;
-	read (A, n);
-	print (A, n);
+	read (arr, n);
+	print (arr, n);
 	cout << "\nRunning Selection Sort.........\n";
-    selectionSort (A, n);
-	print (A, n);
+    selectionSort (arr, n);
+	print (arr, n);
     return 0;
 }
